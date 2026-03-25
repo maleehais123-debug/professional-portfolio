@@ -631,34 +631,6 @@ main {
   background: var(--text-main);
 }
 
-/* ─── Swiper layout protection (mobile-safe) ─────────────────────────────── */
-/* Swiper requires overflow:hidden + a horizontal flex-row wrapper at ALL sizes.
-   Without these, mobile flex-direction:column rules break the carousel. */
-.merch-swiper,
-.landing-swiper,
-.ab-swiper,
-.about-swiper {
-  overflow: hidden !important;
-}
-
-.merch-swiper .swiper-wrapper,
-.landing-swiper .swiper-wrapper,
-.ab-swiper .swiper-wrapper,
-.about-swiper .swiper-wrapper {
-  display: flex !important;
-  flex-direction: row !important;
-  flex-wrap: nowrap !important;
-  align-items: stretch !important;
-}
-
-.merch-swiper .swiper-slide,
-.landing-swiper .swiper-slide,
-.ab-swiper .swiper-slide,
-.about-swiper .swiper-slide {
-  width: 100% !important;
-  min-width: 100% !important;
-  flex-shrink: 0 !important;
-}
 
 /* Case Study Overrides */
 .case-study-content {
@@ -915,10 +887,20 @@ main {
     gap: 1.5rem;
   }
   
-  /* Swiper: Hide arrows on touch devices to focus on content */
+  /* Swiper: Hide arrows on touch devices */
   .swiper-button-next,
   .swiper-button-prev {
     display: none !important;
+  }
+
+  /* Prevent slides from stacking on mobile (fade effect uses absolute positioning
+     but flex-column overrides from other rules can leak into the wrapper) */
+  .merch-swiper .swiper-wrapper,
+  .landing-swiper .swiper-wrapper,
+  .ab-swiper .swiper-wrapper,
+  .about-swiper .swiper-wrapper {
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
   }
 
   /* About section: let the swiper expand to fit the slide content on mobile */

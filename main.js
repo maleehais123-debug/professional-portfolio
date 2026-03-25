@@ -36,8 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     effect: 'fade',
     fadeEffect: {
       crossFade: true
-    },
-    autoHeight: true
+    }
   };
 
   new Swiper('.merch-swiper', swiperOptions);
