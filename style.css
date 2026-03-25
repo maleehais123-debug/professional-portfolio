@@ -524,6 +524,8 @@ main {
 .mockup-body img {
   width: 100%;
   display: block;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
 }
 
 /* Reveal Animations */
@@ -557,8 +559,16 @@ main {
   .side-by-side-mockups {
     flex-direction: column;
   }
+  /* On mobile, let mockup-window height be driven by content for text slides;
+     image slides need enough room for the tall screenshot images */
   .mockup-window {
-    height: 500px;
+    height: 420px;
+  }
+  /* Text-only slides must show all content without clipping */
+  .mockup-window .case-study-content {
+    overflow-y: auto;
+    height: 100%;
+    box-sizing: border-box;
   }
 }
 
@@ -910,6 +920,33 @@ main {
   .swiper-button-prev {
     display: none !important;
   }
+
+  /* About section: let the swiper expand to fit the slide content on mobile */
+  .about-swiper {
+    height: auto !important;
+  }
+  .about-swiper .swiper-wrapper {
+    height: auto !important;
+  }
+  .about-swiper .swiper-slide {
+    height: auto !important;
+  }
+  .about-swiper .mockup-window.mockup-fit {
+    height: auto !important;
+    min-height: 320px;
+  }
+  .about-swiper .mockup-window.mockup-fit .mockup-body {
+    overflow-y: visible !important;
+    height: auto !important;
+  }
+
+  /* All image carousels: ensure enough height for tall screenshots on mobile */
+  .merch-swiper .mockup-window,
+  .landing-swiper .mockup-window,
+  .ab-swiper .mockup-window {
+    height: 440px;
+  }
+
   
   .about-card {
     padding: 2rem 1rem;
