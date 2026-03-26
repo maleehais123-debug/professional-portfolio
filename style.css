@@ -632,8 +632,11 @@ main {
   background: transparent !important;
   border: none !important;
   color: var(--text-main) !important; /* Keep it light/white */
-  width: auto !important;
-  height: auto !important;
+  width: 44px !important;
+  height: 44px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
   margin-top: 0 !important;
   top: 15rem !important; /* Locks them near the top of the card! */
   transition: all 0.3s ease;
@@ -721,6 +724,7 @@ main {
 
   .swiper-button-next, .swiper-button-prev {
     top: 12rem !important; 
+    transform: scale(0.6) !important;
   }
   .swiper-button-prev { left: -10px !important; }
   .swiper-button-next { right: -10px !important; }
