@@ -19,35 +19,7 @@
   list-style: none;
 }
 
-/* MOBILE */
-@media (max-width: 768px) {
 
-  .burger {
-    display: block;
-  }
-
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    right: 0;
-    background: #111;
-    padding: 1rem;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-}
-/* HIDE BURGER ON DESKTOP */
-.burger {
-  display: none;
-  font-size: 2rem;
-  cursor: pointer;
-  color: var(--text-main);
-}
 
 /* MOBILE NAV */
 @media (max-width: 768px) {
