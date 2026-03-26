@@ -457,7 +457,7 @@ main {
 /* Utility to fit content instead of fixed 700px height */
 .mockup-window.mockup-fit {
   height: auto;
-  min-height: 300px;
+  min-height: 0px;
 }
 .mockup-window.mockup-fit .mockup-body {
   overflow-y: visible;
@@ -522,9 +522,9 @@ main {
 
 .mockup-body img {
   width: 100%;
+  height: auto; /* important */
   display: block;
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: crisp-edges;
+  object-fit: cover; /* optional, avoids stretching if needed */
 }
 
 /* Reveal Animations */
