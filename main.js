@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Initialize Swipers
   const swiperOptions = {
-    loop: true,
+    loop: false,
     autoHeight: true, // <--- THIS FIXES THE BLACK VOID
     navigation: {
       nextEl: '.swiper-button-next',
