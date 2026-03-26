@@ -93,6 +93,8 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 body {
@@ -101,6 +103,7 @@ body {
   color: var(--text-main);
   line-height: 1.6;
   overflow-x: hidden;
+  width: 100%;
   position: relative;
 }
 
@@ -154,6 +157,8 @@ a {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  display: inline-block;
+  padding: 0.1em;
 }
 
 .glass {
@@ -729,7 +734,7 @@ main {
   .swiper-button-prev { left: -10px !important; }
   .swiper-button-next { right: -10px !important; }
 
-  .hero h1 { font-size: 3.2rem; }
+  .hero h1 { font-size: clamp(2.5rem, 10vw, 3.5rem); }
   .section-title { font-size: 2.2rem; }
 }
 
