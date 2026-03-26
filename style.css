@@ -450,7 +450,7 @@ main {
   box-shadow: 0 10px 30px rgba(0,0,0,0.5);
   display: flex;
   flex-direction: column;
-  height: 700px;
+  height: auto; /* ✅ FIX */
   border: 1px solid var(--glass-border);
 }
 
@@ -501,8 +501,7 @@ main {
 }
 
 .mockup-body {
-  flex: 1;
-  overflow-y: auto;
+  overflow-y: visible;
   position: relative;
 }
 
