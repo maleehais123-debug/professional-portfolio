@@ -51,4 +51,13 @@ document.addEventListener('DOMContentLoaded', () => {
   new Swiper('.ab-swiper', swiperOptions);
   new Swiper('.about-swiper', swiperOptions);
 });
+const burger = document.getElementById("burger");
+const navbar = document.querySelector(".navbar");
 
+burger.addEventListener("click", () => {
+  navbar.classList.toggle("active");
+});document.querySelectorAll(".nav-links a").forEach(link => {
+  link.addEventListener("click", () => {
+    navbar.classList.remove("active");
+  });
+});
