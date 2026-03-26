@@ -1,3 +1,27 @@
+/* --- RESTORING BUTTON COLORS --- */
+
+.video-btn.before {
+  background: rgba(239, 68, 68, 0.15) !important; /* Subtle Red */
+  color: #fca5a5 !important;
+  border: 1px solid rgba(239, 68, 68, 0.3) !important;
+}
+
+.video-btn.after {
+  background: rgba(74, 222, 128, 0.15) !important; /* Subtle Green */
+  color: #4ade80 !important;
+  border: 1px solid rgba(74, 222, 128, 0.3) !important;
+}
+
+/* Hover States */
+.video-btn.before:hover {
+  background: rgba(239, 68, 68, 0.3) !important;
+  border-color: rgba(239, 68, 68, 0.6) !important;
+}
+
+.video-btn.after:hover {
+  background: rgba(74, 222, 128, 0.3) !important;
+  border-color: rgba(74, 222, 128, 0.6) !important;
+}
 
 .swiper-autoheight, .swiper-autoheight .swiper-slide {
   transition: height 0.3s ease-in-out;
