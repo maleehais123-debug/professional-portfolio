@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialize Swipers
   const swiperOptions = {
     loop: true,
+    autoHeight: true, // <--- THIS FIXES THE BLACK VOID
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
@@ -36,7 +37,13 @@ document.addEventListener('DOMContentLoaded', () => {
     effect: 'fade',
     fadeEffect: {
       crossFade: true
-    }
+    },
+    // This ensures it recalculates height when the window or images load
+    on: {
+      init: function () {
+        this.update();
+      },
+    },
   };
 
   new Swiper('.merch-swiper', swiperOptions);
