@@ -604,6 +604,33 @@ main {
 }
 
 /* Mobile Media Query Overhaul */
+/* Ensure Swiper Buttons are visible and accessible */
+.swiper-button-next,
+.swiper-button-prev {
+  background: rgba(40, 40, 40, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #fff !important;
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background: rgba(60, 60, 60, 0.9);
+  transform: scale(1.1);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 18px !important;
+  font-weight: bold;
+}
+
 @media (max-width: 768px) {
   /* --- 1. NAVBAR MOBILE FIX --- */
   .navbar {
@@ -662,7 +689,7 @@ main {
   }
 
   .swiper-button-next, .swiper-button-prev {
-    display: none !important;
+    transform: scale(0.7);
   }
 
   .hero h1 { font-size: 3.2rem; }
