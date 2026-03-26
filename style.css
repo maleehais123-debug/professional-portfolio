@@ -1,71 +1,4 @@
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-}
-
-/* hide burger on desktop */
-.burger {
-  display: none;
-  font-size: 2rem;
-  cursor: pointer;
-}
-
-/* desktop nav */
-.nav-links {
-  display: flex;
-  gap: 1.5rem;
-  list-style: none;
-}
-
-
-
-/* MOBILE NAV */
-@media (max-width: 768px) {
-
-  .burger {
-    display: block;
-    position: absolute;
-    right: 1.5rem;
-  }
-
-  .navbar {
-    justify-content: space-between;
-    position: fixed;
-    padding: 1rem 1.5rem;
-  }
-
-  /* hide default menu + button */
-  .nav-links,
-  .nav-cta {
-    display: none;
-  }
-
-  /* dropdown menu when active */
-  .navbar.active .nav-links {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    right: 0;
-    background: rgba(10, 10, 10, 0.95);
-    backdrop-filter: blur(20px);
-    padding: 1.5rem;
-    gap: 1.5rem;
-    border-radius: 20px;
-  }
-
-  .navbar.active .nav-links li {
-    text-align: center;
-  }
-
-  .navbar.active .nav-cta {
-    display: block;
-    margin: 1rem auto 0;
-  }
-}
+/* Navbar CSS replaced to prevent duplicates */
 /* --- 1. RESTORE BENTO STATS (KEY METRICS) --- */
 .bento-stats {
   display: flex !important;
@@ -255,19 +188,28 @@ a {
   width: 90%;
   max-width: 1200px;
   display: flex;
-  justify-content: center;
-  gap: 3rem;
+  justify-content: space-between;
   align-items: center;
   padding: 0.8rem 2rem;
   border-radius: 99px;
   z-index: 1000;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
 }
 
-.nav-brand {
+.logo {
   font-weight: 700;
   font-size: 1.5rem;
   letter-spacing: -1px;
+}
+
+.burger {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
 .nav-links {
@@ -665,24 +607,37 @@ main {
 @media (max-width: 768px) {
   /* --- 1. NAVBAR MOBILE FIX --- */
   .navbar {
-    width: 95% !important;
-    gap: 0.5rem !important;
-    padding: 0.8rem 1rem !important;
-    justify-content: space-between !important; /* Pushes Logo left and Button right */
+    width: 95%;
+    padding: 0.8rem 1.5rem;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  .burger {
+    display: block;
   }
 
   .nav-links {
-    display: none !important; /* Removes the middle links that were causing the overlap */
+    display: none; /* Hide default nav links */
   }
 
-  .nav-brand {
-    font-size: 1.2rem !important;
-  }
-
-  .navbar .btn-primary {
-    padding: 0.6rem 1rem !important;
-    font-size: 0.8rem !important;
-    white-space: nowrap !important;
+  .nav-links.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 1.5rem;
+    gap: 1.5rem;
+    border-radius: 20px;
+    border: 1px solid var(--glass-border);
+    text-align: center;
   }
 
   /* --- 2. EXISTING MOCKUP & SLIDER FIXES --- */
@@ -694,29 +649,6 @@ main {
   .mockup-window {
     height: auto !important;
     min-height: 0 !important;
-  }
-
-  .about-swiper .mockup-window.mockup-fit {
-    height: auto !important;
-    min-height: 0 !important;
-  }
-
-  .about-swiper .mockup-window.mockup-fit .mockup-body {
-    overflow-y: visible !important;
-    height: auto !important;
-  }
-
-  .swiper-button-next, .swiper-button-prev {
-    display: none !important;
-  }
-
-  .hero h1 { font-size: 3.2rem; }
-  .section-title { font-size: 2.2rem; }
-}
-
-  .mockup-window {
-    height: auto !important;
-    min-height: 0 !important; /* FIX: Killed the 300px mobile gap */
   }
 
   .about-swiper .mockup-window.mockup-fit {
