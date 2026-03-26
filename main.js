@@ -53,18 +53,17 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 const burger = document.getElementById("burger");
 const navbar = document.querySelector(".navbar");
-
-burger.addEventListener("click", () => {
-  navbar.classList.toggle("active");
-});document.querySelectorAll(".nav-links a").forEach(link => {
-  link.addEventListener("click", () => {
-    navbar.classList.remove("active");
-  });
-});
-
-const burger = document.getElementById("burger");
 const navLinks = document.getElementById("navLinks");
 
 burger.addEventListener("click", () => {
+  navbar.classList.toggle("active");
   navLinks.classList.toggle("active");
+});
+
+// close menu when clicking a link
+document.querySelectorAll(".nav-links a").forEach(link => {
+  link.addEventListener("click", () => {
+    navbar.classList.remove("active");
+    navLinks.classList.remove("active");
+  });
 });
