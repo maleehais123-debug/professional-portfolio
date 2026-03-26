@@ -562,8 +562,9 @@ main {
   /* On mobile, let mockup-window height be driven by content for text slides;
      image slides need enough room for the tall screenshot images */
   .mockup-window {
-    height: 420px;
-  }
+  height: auto;
+  min-height: 300px;
+}
   /* Text-only slides must show all content without clipping */
   .mockup-window .case-study-content {
     overflow-y: auto;
@@ -922,12 +923,6 @@ main {
     height: auto !important;
   }
 
-  /* All image carousels: ensure enough height for tall screenshots on mobile */
-  .merch-swiper .mockup-window,
-  .landing-swiper .mockup-window,
-  .ab-swiper .mockup-window {
-    height: 440px;
-  }
 
   
   .about-card {
