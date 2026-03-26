@@ -1,26 +1,74 @@
 /* --- RESTORING BUTTON COLORS --- */
 
+/* --- 1. RESTORE BENTO STATS (KEY METRICS) --- */
+.bento-stats {
+  display: flex !important;
+  justify-content: space-around !important;
+  text-align: center !important;
+  padding: 1.5rem 0 !important;
+  gap: 2rem !important;
+}
+
+.bento-stats .stat h4 {
+  font-size: 2.8rem !important; /* Made them bigger */
+  color: #4ade80 !important;   /* Bright Green */
+  margin-bottom: 5px !important;
+  font-weight: 700 !important;
+}
+
+.bento-stats .stat span {
+  font-size: 0.9rem !important;
+  color: var(--text-muted) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1.5px !important;
+}
+
+/* --- 2. RESTORE VIDEO BUTTONS (RED & GREEN) --- */
+.video-links {
+  display: flex !important;
+  gap: 2rem !important; /* More space between buttons */
+  justify-content: center !important;
+  margin-top: 2rem !important;
+  padding-bottom: 1rem !important;
+}
+
+.video-btn {
+  padding: 1.2rem 2.2rem !important; /* Bigger, clickable area */
+  border-radius: 50px !important;
+  font-weight: 600 !important;
+  font-size: 1.1rem !important; /* Larger text */
+  transition: all 0.3s ease !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.8rem !important;
+}
+
 .video-btn.before {
-  background: rgba(239, 68, 68, 0.15) !important; /* Subtle Red */
+  background: rgba(239, 68, 68, 0.15) !important;
   color: #fca5a5 !important;
-  border: 1px solid rgba(239, 68, 68, 0.3) !important;
+  border: 1px solid rgba(239, 68, 68, 0.4) !important;
 }
 
 .video-btn.after {
-  background: rgba(74, 222, 128, 0.15) !important; /* Subtle Green */
+  background: rgba(74, 222, 128, 0.15) !important;
   color: #4ade80 !important;
-  border: 1px solid rgba(74, 222, 128, 0.3) !important;
+  border: 1px solid rgba(74, 222, 128, 0.4) !important;
 }
 
-/* Hover States */
-.video-btn.before:hover {
-  background: rgba(239, 68, 68, 0.3) !important;
-  border-color: rgba(239, 68, 68, 0.6) !important;
+/* Hover effect to make them feel "alive" */
+.video-btn:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.4) !important;
 }
 
-.video-btn.after:hover {
-  background: rgba(74, 222, 128, 0.3) !important;
-  border-color: rgba(74, 222, 128, 0.6) !important;
+/* --- 3. CLEAN UP SWIPER SPACING --- */
+.case-study-content {
+  padding: 4rem 2rem !important; /* More breathing room */
+}
+
+.content-inner h3 {
+  font-size: 2.2rem !important;
+  margin-bottom: 2rem !important;
 }
 
 .swiper-autoheight, .swiper-autoheight .swiper-slide {
