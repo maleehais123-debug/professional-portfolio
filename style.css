@@ -1,5 +1,57 @@
-/* --- RESTORING BUTTON COLORS --- */
 
+/* HIDE BURGER ON DESKTOP */
+.burger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--text-main);
+}
+
+/* MOBILE NAV */
+@media (max-width: 768px) {
+
+  .burger {
+    display: block;
+    position: absolute;
+    right: 1.5rem;
+  }
+
+  .navbar {
+    justify-content: space-between;
+    position: fixed;
+    padding: 1rem 1.5rem;
+  }
+
+  /* hide default menu + button */
+  .nav-links,
+  .nav-cta {
+    display: none;
+  }
+
+  /* dropdown menu when active */
+  .navbar.active .nav-links {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(20px);
+    padding: 1.5rem;
+    gap: 1.5rem;
+    border-radius: 20px;
+  }
+
+  .navbar.active .nav-links li {
+    text-align: center;
+  }
+
+  .navbar.active .nav-cta {
+    display: block;
+    margin: 1rem auto 0;
+  }
+}
 /* --- 1. RESTORE BENTO STATS (KEY METRICS) --- */
 .bento-stats {
   display: flex !important;
