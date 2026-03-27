@@ -779,3 +779,29 @@ main {
     font-size: 2.2rem !important;
   }
 }
+
+/* Project Header Fixes (Centering on Mobile) */
+.project-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  text-align: left;
+}
+.project-header-text {
+  flex: 1;
+  min-width: 250px;
+}
+.project-header-btn {
+  margin-top: 0.5rem;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .project-header-row {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
